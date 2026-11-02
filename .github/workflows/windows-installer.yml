@@ -33,6 +33,10 @@ on:
         required: false
         default: ''
 
+# Least privilege (2026-11-02): this workflow only uploads to an existing GitHub Release.
+permissions:
+  contents: write   # gh release upload needs it; nothing else
+
 jobs:
   build:
     runs-on: windows-latest
